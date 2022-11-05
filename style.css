@@ -15,7 +15,7 @@ body {
     color: #555;
 }
 
-                 /* Barre de navigation */
+                 /* Barre de navigation: navbar */
 .header {
     display: flex;
     justify-content: space-between;
@@ -58,6 +58,7 @@ body {
 
 
            /* Landing page */
+
 .section-hero {
     background-color: #000;
     padding: 0 0 2rem 0;
@@ -73,6 +74,7 @@ body {
 }
 .paragraph-title {
     font-size: 2.4rem;
+    font-style: italic;
     color: #fff;
     margin-bottom: 3.2rem;
 }
@@ -82,10 +84,20 @@ body {
     line-height: 1.05;
     color: #fff;
     letter-spacing: -0.5px;
-    margin-bottom: 4.8rem;
+    margin-bottom: -0.2rem;
 }
 
-        /* boutons */
+.hero-presentation {
+    font-size: 2.4rem;
+    font-weight: 200;
+    line-height: 1.05;
+    color: #0761f2;
+    margin-bottom: 4rem;
+    margin-top: 1rem;
+}
+
+
+    /* boutons */
 
 .btn:link,
 .btn:visited {
@@ -106,7 +118,8 @@ body {
 } 
 
 
-         /* La terre en Css */
+    /* La terre en Css */
+
 .earth {
     width: 300px;
     height: 300px;
@@ -127,7 +140,8 @@ body {
     }
 }
 
-      /* etoiles de fond */
+      /* etoiles de fond couplé avec main.js pr la création d'étoiles */
+
 .star {
     position: absolute;
     background-color: #fff;
@@ -159,20 +173,393 @@ body {
     }
 }
 
-             /* Contact page */
+            /* About page */
 
-.section-about{
-        background-color: #000;
-        padding: 0 0 2rem 0;
+.section-about {
+    background: url("images/milkyway.jpg");
+        padding: 0 0 2rem 0;     
 }
+.about {
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 25rem 3.2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9.6rem;
+    align-items: center; 
+}
+.about-text-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -190px;
+}
+.pargraph-description {
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: #ddd;
+}
+    /* Mars en Css */
+
+.mars {
+     width: 300px;
+     height: 300px;
+     margin: auto;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     background-image: url("images/earth-vert.png");
+     border-radius: 50%;
+     background-size: cover;
+     box-shadow: -20px -20px 50px rgba(131, 204, 14, 0.473) inset, 0 0 20px 2px rgba(131, 226, 19, 0.618);
+     animation: anime2 30s linear alternate infinite;
+}
+@keyframes anime2 {
+        100% {
+            background-position: 100%;
+        }
+}
+
+
+
+
+            /* Skills page */
+
 .section-skills{
-    background-color: #000;
+    background-color: red;
     padding: 0 0 2rem 0;
 }
+.skills {
+    max-width: 130rem;
+    margin: 0 auto;
+    padding: 25rem 3.2rem;
+}
+.skills-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: -190px;
+}
+.skills-title h2 {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #fff;
+}
+.card {
+    width: 150px;
+    height: 220px;
+    border: 2px solid #3586ff;
+}
+
+
+
+        /* Project page */
+
 .section-project{
     background-color: #000;
     padding: 0 0 2rem 0;
 }
+
+.project {
+    max-width: 130rem;
+    padding: 25rem 3.2rem;
+}
+
+
+/* Success page */
+
+.container {
+    background-color: #000;
+    width: 100%;
+    height: 100vw;
+    top: 0;
+    bottom: 0;
+}
+.wrapper {
+    
+    position: relative;
+    margin: 0 auto;
+    display: block;
+    margin-top: 200px;
+    perspective: 1000px;
+    perspective-origin: 60% 50%;
+    transform: rotate(-10deg);
+}
+
+.wrapper > div {
+    position: relative;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    height: 0;
+
+}
+.sun {
+    width: 250px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    height: 125px !important;
+}
+.sun .star2 {
+    width: 250px;
+    height: 250px;
+    background: url("images/sun.png") no-repeat;
+    background-size: cover;
+    border-radius: 250px;
+    margin: 0 auto;
+    animation: spinsun 40s infinite linear;
+}
+
+.planet {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    animation-iteration-count: infinite;
+    overflow: hidden;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent url("images/shadow.png") 0% 0% no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+}
+
+.mercury {
+    position: absolute;
+    width: 400px;
+    z-index: 2;
+    animation: orbitmercury 12s infinite linear;
+    top: -7.5px;
+}
+.mercury .planet {
+    width: 15px;
+    height: 15px;
+    background-image: url("images/mercury.png");
+    animation: anti-spin 12s infinite linear;
+}
+.mercury .shadow {
+    animation: shadow 12s infinite linear;
+}
+
+.venus {
+    position: absolute;
+    width: 506px;
+    z-index: 3;
+    animation: orbitvenus 15s infinite linear;
+    top: -19px;
+}
+.venus .planet {
+    width: 38px;
+    height: 38px;
+    background-image: url("images/venus.png");
+    animation: anti-spin 15s infinite linear;
+}
+.venus .shadow {
+    animation: shadow 15s infinite linear;
+}
+.earth2 {
+    position: absolute;
+    width: 610px;
+    z-index: 4;
+    animation: orbitearth 20s infinite linear;
+    top: -20px;
+}
+.earth2 .planet {
+    width: 40px;
+    height: 40px;
+    background-image: url("images/earth.png");
+    animation: anti-spin 20s infinite linear;
+}
+.earth2 .shadow {
+    animation: shadow 20s infinite linear;
+}
+
+.mars2 {
+    position: absolute;
+    width: 706px;
+    z-index: 5;
+    animation: orbitmars 30s infinite linear;
+    top: -11px;
+}
+.mars2 .planet {
+    width: 22px;
+    height: 22px;
+    background-image: url("images/mars.png");
+    animation: anti-spin 30s infinite linear;
+}
+.mars2 .shadow {
+    animation: shadow 30s infinite linear;
+}
+.jupiter {
+    position: absolute;
+    width: 1100px;
+    z-index: 6;
+    animation: orbitjupiter 50s infinite linear;
+    top: -64px;
+}
+.jupiter .planet {
+    width: 128px;
+    height: 128px;
+    background-image: url("images/jupiter.png");
+    animation: anti-spin 50s infinite linear;
+}
+.jupiter .shadow {
+    animation: shadow 50s infinite linear;
+}
+
+@keyframes spinsun {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(-360deg);
+    }
+}
+
+@keyframes shadow {
+    0%{
+        background-position: 130% 0%;
+    }
+    33%{
+        background-position: 50% 0%;
+    }
+    55%{
+        background-position: 0% 0%;
+    }
+    80%{
+        background-position: -50% 0%;
+    }
+   100%{
+        background-position: -50% 0%;
+    }
+}
+
+@keyframes orbitmercury {
+    0% {
+        z-index: 2;
+        transform: rotateY(0deg);
+    }
+    49% {
+        z-index: 2;
+    }
+    50% {
+        z-index: -2;
+    }
+    99% {
+        z-index: -2;
+    }
+    100% {
+        z-index: 2;
+        transform: rotateY(360deg);
+    }
+}
+@keyframes orbitvenus {
+    0% {
+        z-index: 3;
+        transform: rotateY(0deg);
+    }
+    49% {
+        z-index: 3;
+    }
+    50% {
+        z-index: -3;
+    }
+    99% {
+        z-index: -3;
+    }
+    100% {
+        z-index: 3;
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes orbitearth {
+    0% {
+        z-index: 4;
+        transform: rotateY(0deg);
+    }
+    49% {
+        z-index: 4;
+    }
+    50% {
+        z-index: -4;
+    }
+    99% {
+        z-index: -4;
+    }
+    100% {
+        z-index: 4;
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes orbitmars {
+    0% {
+        z-index: 5;
+        transform: rotateY(0deg);
+    }
+    49% {
+        z-index: 5;
+    }
+    50% {
+        z-index: -5;
+    }
+    99% {
+        z-index: -5;
+    }
+    100% {
+        z-index: 5;
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes orbitjupiter {
+    0% {
+        z-index: 6;
+        transform: rotateY(0deg);
+    }
+    49% {
+        z-index: 6;
+    }
+    50% {
+        z-index: -6;
+    }
+    99% {
+        z-index: -6;
+    }
+    100% {
+        z-index: 6;
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes anti-spin {
+    form {
+        transform: rotateY(0);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes anti-spin-rings {
+    form {
+        transform: rotateY(0) rotateX(73deg);
+    }
+    to {
+        transform: rotateY(-360deg) rotateX(73deg);
+    }
+}
+
+        /* Contact page */
 
 .section-contact{
     position: absolute;
@@ -382,7 +769,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-top: 650px;
+    margin-top: 596px;
     background-color: transparent;
 
 }
@@ -420,7 +807,7 @@ footer .social_icon li a:hover {
 }
 
 footer .menu2 li a {
-    font-size: 1.2em;
+    font-size: 1.8em;
     color: #fff;
     margin: 0 10px;
     display: inline-block;
@@ -433,10 +820,10 @@ footer .menu2 li a:hover {
 }
 
 footer p {
-    color: #000;
+    color: #ddd;
     text-align: center;
     margin-top: 15px;
     margin-bottom: 10px;
-    font-size: 1.1em;
+    font-size: 1.4em;
     font-weight: 400;
 }
