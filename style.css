@@ -14,6 +14,13 @@ body {
     font-weight: 400;
     color: #555;
 }
+#canvas1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 
                  /* Barre de navigation: navbar */
 .header {
